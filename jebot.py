@@ -119,6 +119,11 @@ Hit /help  to find out more about how to use me</b>""",
                             [
                                 [
                                     InlineKeyboardButton(
+                                        "Help", callback_data="help"
+                                    )
+                                ]
+                                [
+                                    InlineKeyboardButton(
                                         "Developer", url="https://t.me/ImJanindu"
                                     )
                                 ]
