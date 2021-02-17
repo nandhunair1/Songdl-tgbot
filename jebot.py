@@ -17,7 +17,7 @@ from youtubesearchpython import VideosSearch
 from sample_config import Config
 from ut import get_arg
 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, InlineQuery, InputTextMessageContent
 
 
 Jebot = Client(
