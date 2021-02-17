@@ -83,11 +83,11 @@ async def song(client, message):
 async def home(client, message):
    await Jebot.send_message(
            chat_id=message.chat.id,
-           text="""<b>Hey There, I'm A Song Downloader Bot
+           text="""<b>Hey There, I'm a Song Downloader Bot
 
 Made by @Infinity_BOTs
 
-Send `/song <song name>` To Me Download Song""",
+Send <code>/song [song name] </code> to me for download song</b>""",
         parse_mode="html",
         reply_to_message_id=message.message_id
     )
