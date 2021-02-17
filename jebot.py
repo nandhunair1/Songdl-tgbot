@@ -62,26 +62,26 @@ async def song(client, message):
     user_id = message.from_user["id"]
     args = get_arg(message) + " " + "song"
     if args.startswith(" "):
-        await message.reply("Enter a song name. Check /help")
+        await message.reply("<b>Enter a song name❗</b>")
         return ""
-    status = await message.reply("Processing...")
+    status = await message.reply("<b>Downloading your song, Plz wait 🥺</b>")
     video_link = yt_search(args)
     if not video_link:
-        await status.edit("Song not found.")
+        await status.edit("<b>Song not found 😑</b>")
         return ""
     yt = YouTube(video_link)
     audio = yt.streams.filter(only_audio=True).first()
     try:
         download = audio.download(filename=f"{str(user_id)}")
     except Exception as ex:
-        await status.edit("Failed to download song")
+        await status.edit("<b>Failed to download song 🤕</b>")
         LOGGER.error(ex)
         return ""
     os.rename(download, f"{str(user_id)}.mp3")
     await Jebot.send_chat_action(message.chat.id, "upload_audio")
     await Jebot.send_audio(
         chat_id=message.chat.id,
-        audio=f"{str(user_id)}.mp3",
+        audio=f"{str(user_id)} by @InfJE.mp3",
         duration=int(yt.length),
         title=str(yt.title),
         performer=str(yt.author),
@@ -96,9 +96,9 @@ async def home(client, message):
            chat_id=message.chat.id,
            text="""<b>Hey There, I'm a Song Downloader Bot
 
-Made by @Infinity_BOTs
+Made by @Infinity_BOTs 🇱🇰
 
-Send <code>/song [song name] </code> to me for download song</b>""",
+Send <code>/song [song name]</code> to me for download song</b>""",
         parse_mode="html",
         reply_to_message_id=message.message_id
     )
