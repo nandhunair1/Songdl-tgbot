@@ -1,5 +1,4 @@
 import os
-import logging
 import aiohttp
 from pyrogram import filters, Client
 from pytube import YouTube
@@ -7,7 +6,6 @@ from youtubesearchpython import VideosSearch
 from sample_config import Config
 from ut import get_arg
 
-logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.INFO)
 
 Songdl = Client(
    "Song Downloader",
