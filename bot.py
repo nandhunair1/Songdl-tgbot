@@ -1,37 +1,20 @@
 import os
 import logging
 import aiohttp
-from pyrogram import filters
+from pyrogram import filters, Client
 from pytube import YouTube
 from youtubesearchpython import VideosSearch
-
+from sample_config import Config
 from ut import get_arg
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.INFO)
 
-appid = apihash = bottoken = None
-# start the bot
-print("Starting...")
-try:
-    apiid = config("API_ID", cast=int)
-    apihash = config("API_HASH")
-    bottoken = config("BOT_TOKEN")
-except:
-    print("Environment vars are missing! Kindly recheck.")
-    print("Bot is quiting...")
-    exit()
-
-if (apiid != None and apihash!= None and bottoken != None):
-    try:
-        BotzHub = TelegramClient('bot', apiid, apihash).start(bot_token=bottoken)
-    except Exception as e:
-        print(f"ERROR!\n{str(e)}")
-        print("Bot is quiting...")
-        exit()
-else:
-    print("Environment vars are missing! Kindly recheck.")
-    print("Bot is quiting...")
-    exit()
+Songdl = Client(
+   "Song Downloader",
+   api_id=Config.APP_ID,
+   api_hash=Config.API_HASH,
+   bot_token=Config.BOT_TOKEN,
+)
 
 def yt_search(song):
     videosSearch = VideosSearch(song, limit=1)
