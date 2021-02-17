@@ -134,13 +134,10 @@ Hit /help  to find out more about how to use me</b>""",
         reply_to_message_id=message.message_id
     )
 
-static_data_filter = filters.create(
-    lambda _, __, query: query.data == "help"
-)
 
-@Jebot.on_callback_query(static_data_filter)
-def help(client, cb):
-    await Jebot.edit_message(
+@Jebot.on_message(filters.command("help"))
+async def help(client, message):
+    await Jebot.send_message(
            chat_id=message.chat.id,
            text="""<b>Send <code>/s [song name]</code> to download song
 
@@ -150,5 +147,12 @@ Example: <code>/s satisfya</code>
            parse_mode="html",
         reply_to_message_id=message.message_id
     )
+
+@Jebot.on_callback_query()
+async def help(Jebot, update):
+      cb_data = update.data
+      if "help" in cb_data:
+        await update.message.delete()
+        await help(Jebot, update.message)
 
 Jebot.run()
