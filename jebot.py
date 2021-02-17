@@ -66,7 +66,9 @@ async def song(client, message):
     if args.startswith(" "):
         await message.reply("<b>Enter a song name❗\n\nEx: `/s satisfya`</b>")
         return ""
-    status = await message.reply("<b>Downloading your song, Plz wait 🥺\n\nJoin @Infinity_BOTs 🇱🇰</b>"),
+    status = await Jebot.message.reply(
+             chat_id=message.chat.id,
+             text="<b>Downloading your song, Plz wait 🥺\n\nJoin @Infinity_BOTs 🇱🇰</b>",
              disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
                             [
