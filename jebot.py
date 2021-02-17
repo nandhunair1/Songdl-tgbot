@@ -67,7 +67,6 @@ async def song(client, message):
         await message.reply("<b>Enter a song name❗\n\nEx: `/s satisfya`</b>")
         return ""
     status = await message.reply(
-             chat_id=message.chat.id,
              text="<b>Downloading your song, Plz wait 🥺\n\nJoin @Infinity_BOTs 🇱🇰</b>",
              disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
@@ -80,7 +79,7 @@ async def song(client, message):
                             ]
                         ),
                parse_mode="html",
-        reply_to_message_id=message.chat_id
+        reply_to_message_id=message.message_id
       )
     video_link = yt_search(args)
     if not video_link:
