@@ -5,9 +5,33 @@ from pyrogram import filters
 from pytube import YouTube
 from youtubesearchpython import VideosSearch
 
-from main import pbot
 from ut import get_arg
 
+logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.INFO)
+
+appid = apihash = bottoken = None
+# start the bot
+print("Starting...")
+try:
+    apiid = config("API_ID", cast=int)
+    apihash = config("API_HASH")
+    bottoken = config("BOT_TOKEN")
+except:
+    print("Environment vars are missing! Kindly recheck.")
+    print("Bot is quiting...")
+    exit()
+
+if (apiid != None and apihash!= None and bottoken != None):
+    try:
+        BotzHub = TelegramClient('bot', apiid, apihash).start(bot_token=bottoken)
+    except Exception as e:
+        print(f"ERROR!\n{str(e)}")
+        print("Bot is quiting...")
+        exit()
+else:
+    print("Environment vars are missing! Kindly recheck.")
+    print("Bot is quiting...")
+    exit()
 
 def yt_search(song):
     videosSearch = VideosSearch(song, limit=1)
@@ -40,7 +64,7 @@ class AioHttp:
                 return await resp.read()
 
 
-@pbot.on_message(filters.command("song"))
+@bot.on_message(filters.command("song"))
 async def song(client, message):
     message.chat.id
     user_id = message.from_user["id"]
