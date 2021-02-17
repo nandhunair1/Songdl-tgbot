@@ -67,13 +67,13 @@ async def song(client, message):
         await message.reply("<b>Enter a song name❗\n\nEx: `/s satisfya`</b>")
         return ""
     status = await message.reply(
-             text="<b>Downloading your song, Plz wait 🥺\n\nJoin @Infinity_BOTs 🇱🇰</b>",
+             text="<b>Downloading your song, Plz wait 🥺\n\nDev @ImJanindu 🇱🇰</b>",
              disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
                             [
                                 [
                                     InlineKeyboardButton(
-                                        "Developer", url="https://t.me/ImJanindu"
+                                        "Join Channel", url="https://t.me/Infinity_BOTs"
                                     )
                                 ]
                             ]
