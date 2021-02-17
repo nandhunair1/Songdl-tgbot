@@ -70,13 +70,10 @@ async def song(client, message):
              text="<b>Downloading your song, Plz wait 🥺\n\nDev @ImJanindu 🇱🇰</b>",
              disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
-                            [
-                                [
+                            [[
                                     InlineKeyboardButton(
-                                        "Join Channel", url="https://t.me/Infinity_BOTs"
-                                    )
-                                ]
-                            ]
+                                        "Join Channel", url="https://t.me/Infinity_BOTs")
+                                ]]
                         ),
                parse_mode="html",
         reply_to_message_id=message.message_id
@@ -118,8 +115,7 @@ Hit help button to find out more about how to use me</b>""",
                         reply_markup=InlineKeyboardMarkup(
                             [[
                                     InlineKeyboardButton(
-                                        "Help", callback_data="help")
-                                ],[
+                                        "Help", callback_data="help"),
                                     InlineKeyboardButton(
                                         "Channel", url="https://t.me/Infinity_BOTs")
                                 ]]
