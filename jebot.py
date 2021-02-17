@@ -155,6 +155,8 @@ async def button(Jebot, update):
         await update.message.delete()
         await help(Jebot, update.message)
 
+Jebot.run()
+
 print(
     """
 Bot Started!
@@ -162,5 +164,3 @@ Bot Started!
 Join @Infinity_BOTs
 """
 )
-
-Jebot.run()
