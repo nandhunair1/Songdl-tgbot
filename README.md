@@ -4,9 +4,9 @@
 
 ## Credits:
 
-<b>[Pyrogram](https://github.com/pyrogram/pyrogram)
+<b>[Infinity BOTs](https://t.me/Infinity_BOTs)
 
-[Infinity BOTs](https://t.me/Infinity_BOTs)
+[Pyrogram Library](https://github.com/pyrogram/pyrogram)
 
 ## Developer:
 
