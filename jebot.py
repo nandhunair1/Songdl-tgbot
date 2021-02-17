@@ -120,7 +120,7 @@ async def start(client, message):
 Made by @Infinity_BOTs 🇱🇰
 
 Send <code>/s [song name]</code> to me for download song</b>""",
-        disable_web_page_preview=True,               
+        reply_markup=reply_markup,               
         parse_mode="html",
         reply_to_message_id=message.message_id
     )
@@ -135,7 +135,7 @@ async def help(client, message):
     )
 
 @Jebot.on_callback_query()
-async def buttons(Jebot, update):
+async def button(Jebot, update):
       cb_data = update.data
       if "help" in cb_data:
         await update.message.delete()
