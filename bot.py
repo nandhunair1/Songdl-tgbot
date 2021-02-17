@@ -11,7 +11,7 @@ Songdl = Client(
    "Song Downloader",
    api_id=Config.APP_ID,
    api_hash=Config.API_HASH,
-   bot_token=Config.BOT_TOKEN,
+   bot_token=Config.TG_BOT_TOKEN,
 )
 
 def yt_search(song):
