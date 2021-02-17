@@ -138,9 +138,9 @@ static_data_filter = filters.create(
     lambda _, __, query: query.data == "help"
 )
 
-@Jebot.on_message(filters.command("help"))
-async def help(client, message):
-    await Jebot.send_message(
+@Jebot.on_callback_query(static_data_filter)
+def help(client, cb):
+    await Jebot.update_message(
            chat_id=message.chat.id,
            text="""<b>Send <code>/s [song name]</code> to download song
 
