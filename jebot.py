@@ -108,10 +108,10 @@ async def song(client, message):
 
 @Jebot.on_message(filters.command("start"))
 async def start(client, message):
-    buttons = [[
+    buttons = [
         InlineKeyboardButton('Help', callback_data='help'),
         InlineKeyboardButton('Channel', url='t.me/Infinity_BOTs')
-    ]]
+    ]
         reply_markup = InlineKeyboardMarkup(buttons)
     await Jebot.send_message(
            chat_id=message.chat.id,
