@@ -27,6 +27,10 @@ Jebot = Client(
    bot_token=Config.TG_BOT_TOKEN,
 )
 
+static_data_filter = filters.create(
+    lambda _, __, query: query.data == "Help"
+)
+
 def yt_search(song):
     videosSearch = VideosSearch(song, limit=1)
     result = videosSearch.result()
