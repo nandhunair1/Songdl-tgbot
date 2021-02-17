@@ -112,7 +112,7 @@ async def start(client, message):
            chat_id=message.chat.id,
            text="""<b>Hey There, I'm a Song Downloader Bot
 
-Made by @Infinity_BOTs 🇱🇰
+Made by @ImJanindu 🇱🇰
 
 Hit help button to find out more about how to use me</b>""",   
                         reply_markup=InlineKeyboardMarkup(
@@ -124,7 +124,7 @@ Hit help button to find out more about how to use me</b>""",
                                 ],
                                 [
                                     InlineKeyboardButton(
-                                        "Developer", url="https://t.me/ImJanindu"
+                                        "Channel", url="https://t.me/Infinity_BOTs"
                                     )
                                 ]
                             ]
