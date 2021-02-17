@@ -4,6 +4,6 @@
 
 ## Credits:
 
-[@ImJanindu](https://t.me/ImJanindu)
+<b>[@ImJanindu](https://t.me/ImJanindu)
 
-[@Infinity_BOTs](https://t.me/Infinity_BOTs)
+[@Infinity_BOTs](https://t.me/Infinity_BOTs)</b>
