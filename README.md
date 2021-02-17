@@ -4,6 +4,10 @@
 
 ## Credits:
 
-<b>[@ImJanindu](https://t.me/ImJanindu)
+<b>[Pyrogram](https://github.com/pyrogram/pyrogram)
 
-[@Infinity_BOTs](https://t.me/Infinity_BOTs)</b>
+[Infinity BOTs](https://t.me/Infinity_BOTs)
+
+## Developer:
+
+[@ImJanindu](https://t.me/ImJanindu)</b>
