@@ -64,7 +64,7 @@ async def song(client, message):
     user_id = message.from_user["id"]
     args = get_arg(message) + " " + "song"
     if args.startswith(" "):
-        await message.reply("<b>Enter a song name❗\n\nEx: `/s satisfya`</b>")
+        await message.reply("<b>Enter a song name❗\n\nExample: `/s satisfya`</b>")
         return ""
     status = await message.reply(
              text="<b>Downloading your song, Plz wait 🥺\n\nDev @ImJanindu 🇱🇰</b>",
@@ -114,7 +114,7 @@ async def start(client, message):
 
 Made by @Infinity_BOTs 🇱🇰
 
-Send <code>/s [song name]</code> to me for download song</b>""",   
+Hit /help  to find out more about how to use me</b>""",   
                         reply_markup=InlineKeyboardMarkup(
                             [
                                 [
@@ -133,7 +133,11 @@ Send <code>/s [song name]</code> to me for download song</b>""",
 async def help(client, message):
     await Jebot.send_message(
            chat_id=message.chat.id,
-           text="test",
+           text="""<b>Send <code>/s [song name]</code> to download song
+
+Example: <code>/s satisfya</code>
+
+© @Infinity_BOTs 🇱🇰</b>""",
            parse_mode="html",
         reply_to_message_id=message.message_id
     )
