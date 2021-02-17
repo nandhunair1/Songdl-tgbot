@@ -17,6 +17,8 @@ from youtubesearchpython import VideosSearch
 from sample_config import Config
 from ut import get_arg
 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
 
 Jebot = Client(
    "Song Downloader",
@@ -92,7 +94,12 @@ async def song(client, message):
 
 @Jebot.on_message(filters.command("start"))
 async def home(client, message):
-   await Jebot.send_message(
+  buttons = [[
+        InlineKeyboardButton('Channel', url='https://t.me/Infinity_BOTs'),
+        InlineKeyboardButton('Developer', url='https://t.me/ImJanindu')
+    ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await Jebot.send_message(
            chat_id=message.chat.id,
            text="""<b>Hey There, I'm a Song Downloader Bot
 
