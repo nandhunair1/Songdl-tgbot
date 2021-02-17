@@ -137,7 +137,7 @@ async def help(client, message):
 
 Example: <code>/s satisfya</code>
 
-© @Infinity_BOTs 🇱🇰</b>""",
+~ @Infinity_BOTs 🇱🇰</b>""",
            parse_mode="html",
         reply_to_message_id=message.message_id
     )
