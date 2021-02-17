@@ -114,7 +114,7 @@ async def start(client, message):
 
 Made by @Infinity_BOTs 🇱🇰
 
-Hit /help  to find out more about how to use me</b>""",   
+Hit help button to find out more about how to use me</b>""",   
                         reply_markup=InlineKeyboardMarkup(
                             [
                                 [
