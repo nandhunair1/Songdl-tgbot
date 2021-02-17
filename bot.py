@@ -5,9 +5,13 @@ from pytube import YouTube
 from youtubesearchpython import VideosSearch
 from sample_config import Config
 from ut import get_arg
+from pyrogram.types import (
+    InlineQueryResultArticle, InputTextMessageContent,
+    InlineKeyboardMarkup, InlineKeyboardButton,
+    CallbackQuery, InlineQuery)
 
 
-bot = Client(
+Jebot = Client(
    "Song Downloader",
    api_id=Config.APP_ID,
    api_hash=Config.API_HASH,
@@ -45,7 +49,7 @@ class AioHttp:
                 return await resp.read()
 
 
-@bot.on_message(filters.command("song"))
+@Jebot.on_message(filters.command("[song]"))
 async def song(client, message):
     message.chat.id
     user_id = message.from_user["id"]
@@ -67,8 +71,8 @@ async def song(client, message):
         LOGGER.error(ex)
         return ""
     os.rename(download, f"{str(user_id)}.mp3")
-    await bot.send_chat_action(message.chat.id, "upload_audio")
-    await bot.send_audio(
+    await Jebot.send_chat_action(message.chat.id, "upload_audio")
+    await Jebot.send_audio(
         chat_id=message.chat.id,
         audio=f"{str(user_id)}.mp3",
         duration=int(yt.length),
@@ -79,4 +83,18 @@ async def song(client, message):
     await status.delete()
     os.remove(f"{str(user_id)}.mp3")
 
-bot.run()
+@Jebot.on_message(filters.command(["start"]))
+async def home(client, message):
+   await Jebot.send_message(
+           chat_id=message.chat.id,
+           text="""<b>Hey There, I'm A Song Downloader Bot
+
+Made by @Infinity_BOTs
+
+Send `/song <song name>` To Me Download Song""",
+reply_markup=reply_markup,
+        parse_mode="html",
+        reply_to_message_id=message.message_id
+    )
+
+Jebot.run()
