@@ -7,7 +7,7 @@ from sample_config import Config
 from ut import get_arg
 
 
-Songdl = Client(
+bot = Client(
    "Song Downloader",
    api_id=Config.APP_ID,
    api_hash=Config.API_HASH,
@@ -78,3 +78,5 @@ async def song(client, message):
     )
     await status.delete()
     os.remove(f"{str(user_id)}.mp3")
+
+bot.run()
