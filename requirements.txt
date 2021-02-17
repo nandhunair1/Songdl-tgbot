@@ -3,3 +3,4 @@ aiohttp>=2.2.5
 youtube-search-python
 pyrogram>=1.0.7
 pytube
+tgCrypto>=1.2.2
