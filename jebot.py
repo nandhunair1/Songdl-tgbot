@@ -27,10 +27,6 @@ Jebot = Client(
    bot_token=Config.TG_BOT_TOKEN,
 )
 
-static_data_filter = filters.create(
-    lambda _, __, query: query.data == "Help"
-)
-
 def yt_search(song):
     videosSearch = VideosSearch(song, limit=1)
     result = videosSearch.result()
@@ -137,6 +133,10 @@ Hit /help  to find out more about how to use me</b>""",
         parse_mode="html",
         reply_to_message_id=message.message_id
     )
+
+static_data_filter = filters.create(
+    lambda _, __, query: query.data == "help"
+)
 
 @Jebot.on_message(filters.command("help"))
 async def help(client, message):
