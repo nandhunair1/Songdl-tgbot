@@ -56,13 +56,13 @@ class AioHttp:
                 return await resp.read()
 
 
-@Jebot.on_message(filters.command("song"))
+@Jebot.on_message(filters.command("s"))
 async def song(client, message):
     message.chat.id
     user_id = message.from_user["id"]
     args = get_arg(message) + " " + "song"
     if args.startswith(" "):
-        await message.reply("<b>Enter a song name❗\n\nEx: `/song satisfya`</b>")
+        await message.reply("<b>Enter a song name❗\n\nEx: `/s satisfya`</b>")
         return ""
     status = await message.reply("<b>Downloading your song, Plz wait 🥺\n\nJoin @Infinity_BOTs 🇱🇰</b>")
     video_link = yt_search(args)
@@ -98,7 +98,7 @@ async def home(client, message):
 
 Made by @Infinity_BOTs 🇱🇰
 
-Send <code>/song [song name]</code> to me for download song</b>""",
+Send <code>/s [song name]</code> to me for download song</b>""",
         parse_mode="html",
         reply_to_message_id=message.message_id
     )
