@@ -149,7 +149,7 @@ Example: <code>/s satisfya</code>
     )
 
 @Jebot.on_callback_query()
-async def help(Jebot, update):
+async def button(Jebot, update):
       cb_data = update.data
       if "help" in cb_data:
         await update.message.delete()
