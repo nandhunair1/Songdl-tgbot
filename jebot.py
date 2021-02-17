@@ -108,7 +108,13 @@ async def song(client, message):
 
 @Jebot.on_message(filters.command("start"))
 async def start(client, message):
-    disable_web_page_preview=True,
+   await Jebot.send_message(
+           chat_id=message.chat.id,
+           text="""<b>Hey There, I'm a Song Downloader Bot
+
+Made by @Infinity_BOTs 🇱🇰
+
+Send <code>/s [song name]</code> to me for download song</b>""",   
                         reply_markup=InlineKeyboardMarkup(
                             [
                                 [
@@ -118,15 +124,7 @@ async def start(client, message):
                                 ]
                             ]
                         ),        
-        disable_web_page_preview=True,
-    await Jebot.send_message(
-           chat_id=message.chat.id,
-           text="""<b>Hey There, I'm a Song Downloader Bot
-
-Made by @Infinity_BOTs 🇱🇰
-
-Send <code>/s [song name]</code> to me for download song</b>""",
-        reply_markup=reply_markup,               
+        disable_web_page_preview=True,        
         parse_mode="html",
         reply_to_message_id=message.message_id
     )
