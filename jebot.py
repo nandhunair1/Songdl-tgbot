@@ -93,6 +93,7 @@ async def song(client, message):
     os.remove(f"{str(user_id)}.mp3")
 
 @Jebot.on_message(filters.command("start"))
+async def start(client, message):
     await Jebot.send_message(
            chat_id=message.chat.id,
            text="""<b>Hey There, I'm a Song Downloader Bot
