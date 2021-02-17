@@ -116,18 +116,13 @@ Made by @ImJanindu 🇱🇰
 
 Hit help button to find out more about how to use me</b>""",   
                         reply_markup=InlineKeyboardMarkup(
-                            [
-                                [
+                            [[
                                     InlineKeyboardButton(
-                                        "Help", callback_data="help"
-                                    )
-                                ],
-                                [
+                                        "Help", callback_data="help")
+                                ],[
                                     InlineKeyboardButton(
-                                        "Channel", url="https://t.me/Infinity_BOTs"
-                                    )
-                                ]
-                            ]
+                                        "Channel", url="https://t.me/Infinity_BOTs")
+                                ]]
                         ),        
         disable_web_page_preview=True,        
         parse_mode="html",
