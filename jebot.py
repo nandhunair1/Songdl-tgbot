@@ -79,6 +79,7 @@ async def song(client, message):
                                 ]
                             ]
                         )
+                     )
     video_link = yt_search(args)
     if not video_link:
         await status.edit("<b>Song not found 😑</b>")
