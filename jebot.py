@@ -181,11 +181,9 @@ Hit help button to find out more about how to use me</b>""",
 async def help(client, message):
     await Jebot.send_message(
            chat_id=message.chat.id,
-           text="""<b>Send `/s [song name]` to download song
+           text="""<b>Send a song name to download song
 
-~ @Infinity_BOTs
-
-[Example](https://telegra.ph/file/cc041e5f780e7427bc17a.mp4)</b>""",
+~ @Infinity_BOTs</b>""",
         reply_to_message_id=message.message_id
     )
 
