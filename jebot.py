@@ -66,6 +66,7 @@ async def song(client, message):
   # Hope this will fix the args issue
   # defining args as a array instead of direct defining
   # also splitting text for correct yt search
+  
     args1 = message.text.split(None, 1)
     args = args1[1]
     # Adding +song for better  searching
