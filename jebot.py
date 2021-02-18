@@ -63,11 +63,19 @@ class AioHttp:
 @Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))  
 #Lets Keep this Simple
 async def song(client, message):
+  # Hope this will fix the args issue
+  # defining args as a array instead of direct defining
+  # also splitting text for correct yt search
+    args1 = message.text.split(None, 1)
+    args = args1[1]
+    # Adding +song for better  searching
+    args = args + " " + "song"
     message.chat.id
     user_id = message.from_user["id"]
-    args = get_arg(message) + " " + "song"
-    #Added while callback... I think Useless
-    
+    #Defined above.. THINK USELESS
+    #args = get_arg(message) + " " + "song"
+
+    #Added while callback... I think Useless    
     #if args.startswith("/help"):
         #return ""    
     status = await message.reply(
