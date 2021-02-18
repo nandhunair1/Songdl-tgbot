@@ -71,6 +71,7 @@ async def song(client, message):
     message.chat.id
     user_id = message.from_user["id"]
     args = message.text.split(None, 1)
+    args = str(args)
     # Adding +song for better  searching
     args = args + " " + "song"
     #Defined above.. THINK USELESS
