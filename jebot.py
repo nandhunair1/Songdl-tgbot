@@ -60,7 +60,7 @@ class AioHttp:
  #For private messages        
  #Ignore commands
  #No bots also allowed
-@Jebot.on_message(filters.private & ~filters.bot & ~filters.command)           #("help") & ~filters.command("start") & ~filters.command("s"))  #Lets Keep this Simple
+@Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))  #Lets Keep this Simple
 async def song(client, message):
     message.chat.id
     user_id = message.from_user["id"]
