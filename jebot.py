@@ -166,36 +166,60 @@ async def song(client, message):
 
 @Jebot.on_message(filters.command("start"))
 async def start(client, message):
-   await Jebot.send_message(
-           chat_id=message.chat.id,
-           text="""<b>Hey There, I'm a Song Downloader Bot
+   if message.chat.type == 'private':
+       await Jebot.send_message(
+               chat_id=message.chat.id,
+               text="""<b>Hey There, I'm a Song Downloader Bot
 
-Made by @ImJanindu 🇱🇰
+    Made by @ImJanindu 🇱🇰
 
-Hit help button to find out more about how to use me</b>""",   
-                        reply_markup=InlineKeyboardMarkup(
-                            [[
-                                    InlineKeyboardButton(
-                                        "Help", callback_data="help"),
-                                    InlineKeyboardButton(
-                                        "Channel", url="https://t.me/Infinity_BOTs")
-                                ]]
-                        ),        
-        disable_web_page_preview=True,        
-        parse_mode="html",
-        reply_to_message_id=message.message_id
-    )
+    Hit help button to find out more about how to use me</b>""",   
+                            reply_markup=InlineKeyboardMarkup(
+                                [[
+                                        InlineKeyboardButton(
+                                            "Help", callback_data="help"),
+                                        InlineKeyboardButton(
+                                            "Channel", url="https://t.me/Infinity_BOTs")
+                                    ]]
+                            ),        
+            disable_web_page_preview=True,        
+            parse_mode="html",
+            reply_to_message_id=message.message_id
+        )
+   else:
 
+       await Jebot.send_message(
+               chat_id=message.chat.id,
+               text="""<b>Song Downloader Online\n\n </b>""",   
+                            reply_markup=InlineKeyboardMarkup(
+                                [[
+                                        InlineKeyboardButton(
+                                            "Help", callback_data="help")
+                                        
+                                    ]]
+                            ),        
+            disable_web_page_preview=True,        
+            parse_mode="html",
+            reply_to_message_id=message.message_id
+        )
 
 @Jebot.on_message(filters.command("help"))
 async def help(client, message):
-    await Jebot.send_message(
-           chat_id=message.chat.id,
-           text="""<b>Send a song name to download song
+    if message.chat.type == 'private':   
+        await Jebot.send_message(
+               chat_id=message.chat.id,
+               text="""<b>Send a song name to download song
 
-~ @Infinity_BOTs</b>""",
-        reply_to_message_id=message.message_id
-    )
+    ~ @Infinity_BOTs</b>""",
+            reply_to_message_id=message.message_id
+        )
+    else:
+        await Jebot.send_message(
+               chat_id=message.chat.id,
+               text="<b>Song Downloader Help\n\nEnter a song name❗\n\nExample: `/s guleba` to download it</b>",
+            reply_to_message_id=message.message_id
+        )     
+        
 
 @Jebot.on_callback_query()
 async def button(Jebot, update):
