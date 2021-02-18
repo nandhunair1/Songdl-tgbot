@@ -57,7 +57,57 @@ class AioHttp:
             async with session.get(link) as resp:
                 return await resp.read()
 
-
+ #For private messages        
+ #Ignore commands
+ #No bots also allowed
+@Jebot.on_message(filters.private & ~filters.bot & ~filters.command)           #("help") & ~filters.command("start") & ~filters.command("s"))  #Lets Keep this Simple
+async def song(client, message):
+    message.chat.id
+    user_id = message.from_user["id"]
+    args = get_arg(message) + " " + "song"
+    #Added while callback... I think Useless
+    
+    #if args.startswith("/help"):
+        #return ""    
+    status = await message.reply(
+             text="<b>Downloading your song, Plz wait 🥺\n\nMade by @Infinity_BOTs 🇱🇰</b>",
+             disable_web_page_preview=True,
+                        reply_markup=InlineKeyboardMarkup(
+                            [[
+                                    InlineKeyboardButton(
+                                        "Developer", url="https://t.me/ImJanindu")
+                                ]]
+                        ),
+               parse_mode="html",
+        reply_to_message_id=message.message_id
+      )
+    video_link = yt_search(args)
+    if not video_link:
+        await status.edit("<b>Song not found 😑</b>")
+        return ""
+    yt = YouTube(video_link)
+    audio = yt.streams.filter(only_audio=True).first()
+    try:
+        download = audio.download(filename=f"{str(user_id)}")
+    except Exception as ex:
+        await status.edit("<b>Failed to download song 🤕</b>")
+        LOGGER.error(ex)
+        return ""
+    os.rename(download, f"{str(user_id)}.mp3")
+    await Jebot.send_chat_action(message.chat.id, "upload_audio")
+    await Jebot.send_audio(
+        chat_id=message.chat.id,
+        audio=f"{str(user_id)}.mp3",
+        duration=int(yt.length),
+        title=str(yt.title),
+        performer=str(yt.author),
+        reply_to_message_id=message.message_id,
+    )
+    await status.delete()
+    os.remove(f"{str(user_id)}.mp3")    
+    
+    
+    
 @Jebot.on_message(filters.command("s"))
 async def song(client, message):
     message.chat.id
