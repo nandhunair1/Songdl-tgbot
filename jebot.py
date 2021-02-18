@@ -58,7 +58,7 @@ class AioHttp:
                 return await resp.read()
 
 
-@Jebot.on_message(filters.command("s"))
+@Jebot.on_message(filters.text)
 async def song(client, message):
     message.chat.id
     user_id = message.from_user["id"]
