@@ -171,9 +171,9 @@ async def start(client, message):
                chat_id=message.chat.id,
                text="""<b>Hey There, I'm a Song Downloader Bot
 
-    Made by @ImJanindu 🇱🇰
+Made by @ImJanindu 🇱🇰
 
-    Hit help button to find out more about how to use me</b>""",   
+Hit help button to find out more about how to use me</b>""",   
                             reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
@@ -190,7 +190,7 @@ async def start(client, message):
 
        await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>Song Downloader Online\n\n </b>""",   
+               text="""<b>Song Downloader Online\n\n</b>""",   
                             reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
@@ -210,13 +210,13 @@ async def help(client, message):
                chat_id=message.chat.id,
                text="""<b>Send a song name to download song
 
-    ~ @Infinity_BOTs</b>""",
+~ @Infinity_BOTs</b>""",
             reply_to_message_id=message.message_id
         )
     else:
         await Jebot.send_message(
                chat_id=message.chat.id,
-               text="<b>Song Downloader Help\n\nEnter a song name❗\n\nExample: `/s guleba` to download it</b>",
+               text="<b>Song Downloader Help\n\nEnter a song name❗\n\nExample: `/s guleba`</b>",
             reply_to_message_id=message.message_id
         )     
         
