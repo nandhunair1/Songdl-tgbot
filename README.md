@@ -1,4 +1,4 @@
-# Song Download Bot
+# Song Download Bot ❤
 
 ## You can download any song using this bot. Can be found in telegram as [@JESongdlBot](https://t.me/JESongdlBot)
 
@@ -8,6 +8,8 @@
 
 [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 
-## Developer:
+## Developers:
 
-[@ImJanindu](https://t.me/ImJanindu)</b>
+[@ImJanindu](https://t.me/ImJanindu)
+
+[@InukaASiTH](https://t.me/InukaASiTH)
