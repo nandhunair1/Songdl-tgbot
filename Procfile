@@ -1,1 +1,1 @@
-Jebot: python3 jebot.py
+worker: python3 jebot.py
