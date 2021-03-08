@@ -1,6 +1,6 @@
 # Telegram Song Download Bot ❤
 
-## You can download any song using this bot. Can be found in telegram as [@JESongdlBot](https://t.me/JESongdlBot)
+## You can download any song using this bot. Can be found in telegram as [MrC《》VENOM](https://t.me/MrC_VENOM)
 
 ### Deploy to Heroku 🏃‍♂
 
@@ -8,12 +8,12 @@
 
 ### Credits:
 
-[Infinity BOTs](https://t.me/Infinity_BOTs)
+[SUPPORT GROUP](https://t.me/tvseriezzz)
 
 [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 
 ### Developers:
 
-[@ImJanindu](https://t.me/ImJanindu)
+[CHANNEL](https://t.me/TV_SERIES_ON)
 
-[@InukaASiTH](https://t.me/InukaASiTH)
+[HELP](https://t.me/MrC_VENOM)
