@@ -126,7 +126,7 @@ async def song(client, message):
         await rkp.delete()
   
     
-@Jebot.on_message(filters.edited & filters.group)
+@Jebot.on_message(filters.text)
 async def song(client, message):
     cap = "@tvseriezzz_music"
     url = message.text.split(None, 1)[1]
