@@ -46,7 +46,7 @@ Jebot = Client(
 @Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
 async def song(client, message):
  #tvseriezzz_music #tvseriezzz_music
-    cap = "@tvseriezzz_music"
+    cap = "@tvseriezzz_music\n\n📮 𝗕𝘆: {message.from_user.mention()}"
     url = message.text
     rkp = await message.reply("Processing...")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
@@ -80,7 +80,7 @@ async def song(client, message):
         }
         song = True
     try:
-        await rkp.edit("Downloading...")
+        await rkp.edit("Downloading...[🎧](https://te.legra.ph/file/c3dce12116a0a8af80c93.jpg)")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
@@ -114,7 +114,7 @@ async def song(client, message):
         return
     time.time()
     if song:
-        await rkp.edit("`Uploading Your File,Please Wait for Some Seconds...`[🎧](https://te.legra.ph/file/c3dce12116a0a8af80c93.jpg)") #tvseriezzz_music
+        await rkp.edit("Uploading....[🎧](https://te.legra.ph/file/c3dce12116a0a8af80c93.jpg)") #tvseriezzz_music
         lol = "./thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
@@ -128,7 +128,7 @@ async def song(client, message):
     
 @Jebot.on_message(filters.text & ~filters.edited & filters.group)
 async def song(client, message):
-    cap = "@tvseriezzz_music"
+    cap = "@tvseriezzz_music\n\n📮 𝗕𝘆: {message.from_user.mention()}"
     url = message.text.split(None, 1)[1]
     rkp = await message.reply("Processing...")
     if not url:
@@ -164,7 +164,7 @@ async def song(client, message):
         }
         song = True
     try:
-        await rkp.edit("Downloading...")
+        await rkp.edit("Downloading....[🎧](https://te.legra.ph/file/c3dce12116a0a8af80c93.jpg)")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
@@ -198,7 +198,7 @@ async def song(client, message):
         return
     time.time()
     if song:
-        await rkp.edit("`Uploading Your File,Please Wait for Some Seconds...`[🎧](https://te.legra.ph/file/c3dce12116a0a8af80c93.jpg)") #tvseriezzz_music
+        await rkp.edit("Uploading .....[🎧](https://te.legra.ph/file/c3dce12116a0a8af80c93.jpg)") #tvseriezzz_music
         lol = "./thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
