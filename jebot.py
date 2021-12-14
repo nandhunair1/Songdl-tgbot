@@ -126,8 +126,8 @@ async def song(client, message):
         await rkp.delete()
   
     
-@Jebot.on_message(filters.text)
-async def a(client, message):
+@Jebot.on_message(filters.text & ~filters.edited & filters.group)
+async def song(client, message):
     cap = "@tvseriezzz_music"
     url = message.text.split(None, 1)[1]
     rkp = await message.reply("Processing...")
