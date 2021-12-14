@@ -43,7 +43,7 @@ Jebot = Client(
  #For private messages        
  #Ignore commands
  #No bots also allowed
-@Jebot.on_message(filters.private & ~filters.bot & ~filters.edited & filters.group & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
+@Jebot.on_message(filters.edited & filters.group & ~filters.command("help") & ~filters.command("start"))
 async def song(client, message):
  #tvseriezzz_music #tvseriezzz_music
     cap = "@tvseriezzz_music"
