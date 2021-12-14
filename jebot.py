@@ -115,13 +115,13 @@ async def song(client, message):
     time.time()
     if song:
         await rkp.edit("Uploading...") #tvseriezzz_music
-        lol = "./thumb.jpg"
+        lol = "./IMG_20211211_164839_850.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
                  duration=int(rip_data["duration"]),
                  title=str(rip_data["title"]),
                  performer=str(rip_data["uploader"]),
-                 thumb=lol,
+                 IMG_20211211_164839_850=lol,
                  caption=cap)  #tvseriezzz_music
         await rkp.delete()
   
@@ -199,13 +199,13 @@ async def song(client, message):
     time.time()
     if song:
         await rkp.edit("Uploading...") #tvseriezzz_music
-        lol = "./thumb.jpg"
+        lol = "./IMG_20211211_164839_850.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
                  duration=int(rip_data["duration"]),
                  title=str(rip_data["title"]),
                  performer=str(rip_data["uploader"]),
-                 thumb=lol,
+                 IMG_20211211_164839_850=lol,
                  caption=cap)  #tvseriezzz_music
         await rkp.delete()
  
