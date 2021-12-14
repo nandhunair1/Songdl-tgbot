@@ -46,7 +46,7 @@ Jebot = Client(
 @Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
 async def song(client, message):
  #tvseriezzz_music #tvseriezzz_music
-    cap = "@tvseriezzz_music"
+    cap = f'🎧 𝗧𝗶𝘁𝘁𝗹𝗲 : {title}\n⏳ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : {duration}\n👀 𝗩𝗶𝗲𝘄𝘀 : {views}\n\n📮 𝗕𝘆: {message.from_user.mention()}\n<b>📤 𝗕𝘆 :- <a href="https://t.me/tvseriezzz_music">𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑 𝕸𝖚𝖘𝖎𝖈</a>'
     url = message.text
     rkp = await message.reply("Processing...")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
@@ -128,7 +128,7 @@ async def song(client, message):
     
 @Jebot.on_message(filters.edited & filters.group)
 async def song(client, message):
-    cap = "@tvseriezzz_music"
+    cap = f'🎧 𝗧𝗶𝘁𝘁𝗹𝗲 : {title}\n⏳ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : {duration}\n👀 𝗩𝗶𝗲𝘄𝘀 : {views}\n\n📮 𝗕𝘆: {message.from_user.mention()}\n<b>📤 𝗕𝘆 :- <a href="https://t.me/tvseriezzz_music">𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑 𝕸𝖚𝖘𝖎𝖈</a>'
     url = message.text.split(None, 1)[1]
     rkp = await message.reply("Processing...")
     if not url:
