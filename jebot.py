@@ -114,7 +114,7 @@ async def song(client, message):
         return
     time.time()
     if song:
-        await rkp.edit("Uploading...") #tvseriezzz_music
+        await rkp.edit("`Uploading Your File,Please Wait for Some Seconds...`[🎧](https://te.legra.ph/file/c3dce12116a0a8af80c93.jpg)") #tvseriezzz_music
         lol = "./thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
@@ -127,7 +127,7 @@ async def song(client, message):
   
     
 @Jebot.on_message(filters.text)
-async def song(client, message):
+def a(client, message):
     cap = "@tvseriezzz_music"
     url = message.text.split(None, 1)[1]
     rkp = await message.reply("Processing...")
@@ -198,7 +198,7 @@ async def song(client, message):
         return
     time.time()
     if song:
-        await rkp.edit("Uploading...") #tvseriezzz_music
+        await rkp.edit("`Uploading Your File,Please Wait for Some Seconds...`[🎧](https://te.legra.ph/file/c3dce12116a0a8af80c93.jpg)") #tvseriezzz_music
         lol = "./thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
