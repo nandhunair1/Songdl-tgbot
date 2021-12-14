@@ -45,8 +45,8 @@ Jebot = Client(
  #No bots also allowed
 @Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
 async def song(client, message):
- #ImJanindu #JEBotZ
-    cap = "@JEBotZ"
+ #tvseriezzz_music #tvseriezzz_music
+    cap = f'🎧 𝗧𝗶𝘁𝘁𝗹𝗲 : <a href="{link}">{title}</a>\n⏳ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : {duration}\n👀 𝗩𝗶𝗲𝘄𝘀 : {views}\n\n📮 𝗕𝘆: {message.from_user.mention()}\n<b>📤 𝗕𝘆 :- <a href="https://t.me/tvseriezzz_music">𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑 𝕸𝖚𝖘𝖎𝖈</a>'
     url = message.text
     rkp = await message.reply("Processing...")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
@@ -114,7 +114,7 @@ async def song(client, message):
         return
     time.time()
     if song:
-        await rkp.edit("Uploading...") #ImJanindu
+        await rkp.edit("Uploading...") #tvseriezzz_music
         lol = "./thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
@@ -122,13 +122,13 @@ async def song(client, message):
                  title=str(rip_data["title"]),
                  performer=str(rip_data["uploader"]),
                  thumb=lol,
-                 caption=cap)  #JEBotZ
+                 caption=cap)  #tvseriezzz_music
         await rkp.delete()
   
     
-@Jebot.on_message(filters.command("song") & ~filters.edited & filters.group)
+@Jebot.on_message(filters.edited & filters.group)
 async def song(client, message):
-    cap = "@JEBotZ"
+    cap = f'🎧 𝗧𝗶𝘁𝘁𝗹𝗲 : <a href="{link}">{title}</a>\n⏳ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : {duration}\n👀 𝗩𝗶𝗲𝘄𝘀 : {views}\n\n📮 𝗕𝘆: {message.from_user.mention()}\n<b>📤 𝗕𝘆 :- <a href="https://t.me/tvseriezzz_music">𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑 𝕸𝖚𝖘𝖎𝖈</a>'
     url = message.text.split(None, 1)[1]
     rkp = await message.reply("Processing...")
     if not url:
@@ -198,7 +198,7 @@ async def song(client, message):
         return
     time.time()
     if song:
-        await rkp.edit("Uploading...") #ImJanindu
+        await rkp.edit("Uploading...") #tvseriezzz_music
         lol = "./thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
@@ -206,7 +206,7 @@ async def song(client, message):
                  title=str(rip_data["title"]),
                  performer=str(rip_data["uploader"]),
                  thumb=lol,
-                 caption=cap)  #JEBotZ
+                 caption=cap)  #tvseriezzz_music
         await rkp.delete()
  
     
@@ -215,7 +215,7 @@ async def start(client, message):
    if message.chat.type == 'private':
        await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>Hey There, I'm a Song Downloader Bot. A bot by @JEBotZ.
+               text="""<b>Hey There, I'm a Song Downloader Bot. A bot by @tvseriezzz_music.
 
 Hit help button to find out more about how to use me</b>""",   
                             reply_markup=InlineKeyboardMarkup(
@@ -223,7 +223,7 @@ Hit help button to find out more about how to use me</b>""",
                                         InlineKeyboardButton(
                                             "Help", callback_data="help"),
                                         InlineKeyboardButton(
-                                            "Channel", url="https://t.me/Infinity_BOTs")
+                                            "Group", url="https://t.me/tvseriezzz_music")
                                     ]]
                             ),        
             disable_web_page_preview=True,        
@@ -260,7 +260,7 @@ async def help(client, message):
     else:
         await Jebot.send_message(
                chat_id=message.chat.id,
-               text="<b>Song Downloader Help.\n\nSyntax: `/song guleba`</b>",
+               text="<b>Song Downloader Help.\n\nSyntax: `guleba`</b>",
             reply_to_message_id=message.message_id
         )     
         
@@ -276,7 +276,7 @@ print(
     """
 Bot Started!
 
-Join @Infinity_BOTs
+Join @tvseriezzz_music
 """
 )
 
